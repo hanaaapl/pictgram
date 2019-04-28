@@ -4,5 +4,7 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, length: {maximum: 32}, length: {minimum: 8}
-  /^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[-&'()+@_.])[-\w&'()+@.]+$/
+  #/^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[-&'()+@_.])[-\w&'()+@.]+$/
+  has_many :favorites
+  has_many :favorite_topics, through: :favorites, source: 'topic'
 end

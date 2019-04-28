@@ -16,15 +16,4 @@ module Pictgram
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
-
-  class Topic < ApplicationRecord
-  validates :user_id, presence: true
-  validates :description, presence: true
-  validates :image, presence: true
-
-  belongs_to :user
-
-  mount_uploader :image, ImageUploader
-end
-
 end
